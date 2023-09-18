@@ -1,3 +1,4 @@
+import java.util.Objects;
 
 public class Music {
     private String title;
@@ -7,9 +8,8 @@ public class Music {
     private Singer singer;
 
 
-
     public String toString() {
-        return String.format("%s %s %s %s %s",title,duration,genre,singer.getName(),releaseDate);
+        return String.format("%s %s %s %s %s", title, duration, genre, singer.getName(), releaseDate);
     }
 
     public Music(String title, String duration, String genre, Date releaseDate, Singer singer) {
@@ -59,4 +59,11 @@ public class Music {
     public void setSinger(Singer singer) {
         this.singer = singer;
     }
+
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Music music)) return false;
+        return Objects.equals(title, music.title) && Objects.equals(duration, music.duration);
+    }
 }
+

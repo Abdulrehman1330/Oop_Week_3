@@ -9,5 +9,6 @@ public class Main {
 
         System.out.println(m1);
         System.out.println(m2);
+        System.out.println(m1.equals(m2));
     }
 }
